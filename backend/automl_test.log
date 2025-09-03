@@ -1,0 +1,8 @@
+2025-09-03 16:18:36,338 - __main__ - INFO - Starting AutoML integration test...
+2025-09-03 16:18:36,340 - __main__ - ERROR - Error in AutoML test: No module named 'pydantic'
+Traceback (most recent call last):
+  File "C:\Users\donal\CascadeProjects\windsurf-project\backend\test_automl_integration.py", line 80, in run_automl_test
+    from models import Document
+  File "C:\Users\donal\CascadeProjects\windsurf-project\backend\models.py", line 1, in <module>
+    from pydantic import BaseModel, Field
+ModuleNotFoundError: No module named 'pydantic'
