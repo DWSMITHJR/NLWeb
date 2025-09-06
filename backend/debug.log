@@ -1,0 +1,86 @@
+2025-09-06 15:32:23,810 - DEBUG - Added to sys.path: C:\Users\donal\source\repos\NLWeb\backend
+2025-09-06 15:32:23,811 - INFO - Starting hybrid retriever test...
+2025-09-06 15:32:23,811 - INFO - Importing modules...
+2025-09-06 15:32:24,021 - ERROR - Failed to import modules: No module named 'backend'
+2025-09-06 15:32:24,023 - DEBUG - Traceback (most recent call last):
+  File "C:\Users\donal\source\repos\NLWeb\backend\debug_hybrid.py", line 29, in main
+    from automl.retrievers.hybrid_retriever import HybridRetriever
+  File "C:\Users\donal\source\repos\NLWeb\backend\automl\__init__.py", line 4, in <module>
+    from .orchestrator import AutoMLOrchestrator
+  File "C:\Users\donal\source\repos\NLWeb\backend\automl\orchestrator.py", line 11, in <module>
+    from backend.models import (
+    ...<4 lines>...
+    )
+ModuleNotFoundError: No module named 'backend'
+
+2025-09-06 15:32:46,761 - DEBUG - Added to sys.path: C:\Users\donal\source\repos\NLWeb\backend
+2025-09-06 15:32:46,761 - INFO - Starting hybrid retriever test...
+2025-09-06 15:32:46,761 - INFO - Importing modules...
+2025-09-06 15:32:46,970 - ERROR - Failed to import modules: attempted relative import beyond top-level package
+2025-09-06 15:32:46,971 - DEBUG - Traceback (most recent call last):
+  File "C:\Users\donal\source\repos\NLWeb\backend\debug_hybrid.py", line 29, in main
+    from automl.retrievers.hybrid_retriever import HybridRetriever
+  File "C:\Users\donal\source\repos\NLWeb\backend\automl\__init__.py", line 4, in <module>
+    from .orchestrator import AutoMLOrchestrator
+  File "C:\Users\donal\source\repos\NLWeb\backend\automl\orchestrator.py", line 11, in <module>
+    from ....models import (
+    ...<4 lines>...
+    )
+ImportError: attempted relative import beyond top-level package
+
+2025-09-06 15:33:07,565 - DEBUG - Added to sys.path: C:\Users\donal\source\repos\NLWeb\backend
+2025-09-06 15:33:07,565 - INFO - Starting hybrid retriever test...
+2025-09-06 15:33:07,566 - INFO - Importing modules...
+2025-09-06 15:33:07,857 - DEBUG - Environment variable FAISS_OPT_LEVEL is not set, so let's pick the instruction set according to the current CPU
+2025-09-06 15:33:07,965 - INFO - Loading faiss with AVX512 support.
+2025-09-06 15:33:07,965 - INFO - Could not load library with AVX512 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx512'")
+2025-09-06 15:33:07,965 - INFO - Loading faiss with AVX2 support.
+2025-09-06 15:33:07,984 - INFO - Successfully loaded faiss with AVX2 support.
+2025-09-06 15:33:11,918 - DEBUG - Successfully imported modules
+2025-09-06 15:33:11,919 - INFO - Creating test documents...
+2025-09-06 15:33:11,919 - DEBUG - Created 3 test documents
+2025-09-06 15:33:11,919 - INFO - Initializing HybridRetriever...
+2025-09-06 15:33:11,920 - INFO - Use pytorch device_name: cpu
+2025-09-06 15:33:11,920 - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-09-06 15:33:11,922 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-09-06 15:33:12,372 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,407 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-09-06 15:33:12,457 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,483 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-09-06 15:33:12,533 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,557 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-09-06 15:33:12,637 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-09-06 15:33:12,663 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-09-06 15:33:12,711 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,741 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-09-06 15:33:12,787 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,817 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-09-06 15:33:12,872 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-09-06 15:33:12,925 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-09-06 15:33:12,952 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-09-06 15:33:13,051 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-09-06 15:33:13,072 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-09-06 15:33:13,165 - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-09-06 15:33:13,271 - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+2025-09-06 15:33:13,300 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+2025-09-06 15:33:13,380 - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6842
+2025-09-06 15:33:13,383 - DEBUG - Successfully initialized HybridRetriever
+2025-09-06 15:33:13,383 - INFO - Adding documents...
+2025-09-06 15:33:13,403 - DEBUG - Successfully added 3 documents
+2025-09-06 15:33:13,403 - INFO - Querying: quick fox jumping
+2025-09-06 15:33:13,411 - INFO - Retrieved 2 results:
+2025-09-06 15:33:13,412 - INFO - 1. The quick brown fox jumps over the lazy dog. (Score: 1.0000)
+2025-09-06 15:33:13,412 - INFO - 2. The five boxing wizards jump quickly. (Score: 0.3222)
+2025-09-06 15:33:13,412 - INFO - Test completed successfully!
+2025-09-06 15:48:09,601 - DEBUG - Added to sys.path: C:\Users\donal\source\repos\NLWeb\backend
+2025-09-06 15:48:09,602 - INFO - Starting hybrid retriever test...
+2025-09-06 15:48:09,602 - INFO - Importing modules...
+2025-09-06 15:48:09,604 - ERROR - Failed to import modules: No module named 'pydantic'
+2025-09-06 15:48:09,609 - DEBUG - Traceback (most recent call last):
+  File "C:\Users\donal\source\repos\NLWeb\backend\debug_hybrid.py", line 28, in main
+    from models import Document
+  File "C:\Users\donal\source\repos\NLWeb\backend\models.py", line 1, in <module>
+    from pydantic import BaseModel, ConfigDict, Field
+ModuleNotFoundError: No module named 'pydantic'
+

@@ -1,0 +1,4 @@
+numpy
+sentence-transformers
+rank-bm25
+faiss-cpu

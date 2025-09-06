@@ -26,9 +26,9 @@ A Windows-based Natural Language Web Application with AutoML-powered Retrieval-A
 ### Backend Setup
 
 1. Clone the repository (if you haven't already):
-   ```bash
+   ```powershell
    git clone <repository-url>
-   cd windsurf-project
+   cd NLWeb-AutoRAG
    ```
 
 2. Navigate to the backend directory:
@@ -58,12 +58,12 @@ A Windows-based Natural Language Web Application with AutoML-powered Retrieval-A
 
 The AutoML system can be configured using the following environment variables:
 
-```bash
-# AutoML configuration
-export AUTOML_MAX_WORKERS=4  # Number of parallel workers
-export AUTOML_OUTPUT_DIR=./automl_results  # Directory to store results
-export AUTOML_MAX_CONFIGS=20  # Maximum number of configurations to test
-export AUTOML_MAX_ITERATIONS=10  # Maximum optimization iterations
+```powershell
+# AutoML configuration (Windows PowerShell)
+$env:AUTOML_MAX_WORKERS = 4  # Number of parallel workers
+$env:AUTOML_OUTPUT_DIR = "./automl_results"  # Directory to store results
+$env:AUTOML_MAX_CONFIGS = 20  # Maximum number of configurations to test
+$env:AUTOML_MAX_ITERATIONS = 10  # Maximum optimization iterations
 ```
 
 ### Frontend Setup
@@ -181,7 +181,10 @@ formatted = template.format(
 
 Run the test suite:
 
-```bash
+```powershell
+# Activate virtual environment first
+.\venv\Scripts\activate
+
 # Run all tests
 python -m pytest
 

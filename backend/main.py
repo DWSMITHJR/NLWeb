@@ -21,11 +21,13 @@ import faiss
 sys.path.append(str(Path(__file__).parent))
 
 # Import routers
-from api.routers import automl as automl_router
+from backend.api.routers import automl as automl_router
 
-app = FastAPI(title="NLWeb AutoRAG API",
-              description="API for NLWeb AutoRAG with AutoML capabilities",
-              version="0.1.0")
+app = FastAPI(
+    title="NLWeb AutoRAG API",
+    description="API for NLWeb AutoRAG with AutoML capabilities",
+    version="0.1.0",
+)
 
 # CORS middleware configuration
 app.add_middleware(
@@ -39,15 +41,18 @@ app.add_middleware(
 # Include routers
 app.include_router(automl_router.router)
 
+
 class QueryRequest(BaseModel):
     query: str
     top_k: int = 3
     context: Dict[str, Any] = {}
 
+
 class Document(BaseModel):
     id: str
     content: str
     metadata: Dict[str, Any] = {}
+
 
 # In-memory storage for demo purposes
 knowledge_base = []
@@ -67,6 +72,7 @@ index = faiss.IndexFlatIP(EMBEDDING_DIM)
 id_to_doc: Dict[int, Dict[str, Any]] = {}
 next_vector_id = 0
 
+
 def ensure_model_loaded():
     global embedder, EMBEDDING_DIM, index
     if embedder is None:
@@ -78,9 +84,11 @@ def ensure_model_loaded():
             # WARNING: resetting here would lose existing vectors
             pass
 
+
 def _normalize(vectors: np.ndarray) -> np.ndarray:
     norms = np.linalg.norm(vectors, axis=1, keepdims=True) + 1e-12
     return vectors / norms
+
 
 @app.post("/query")
 async def process_query(request: QueryRequest):
@@ -110,12 +118,14 @@ async def process_query(request: QueryRequest):
             doc = id_to_doc.get(idx)
             if not doc:
                 continue
-            retrieved.append({
-                "id": doc["id"],
-                "content": doc["content"],
-                "metadata": doc.get("metadata", {}),
-                "score": float(score),
-            })
+            retrieved.append(
+                {
+                    "id": doc["id"],
+                    "content": doc["content"],
+                    "metadata": doc.get("metadata", {}),
+                    "score": float(score),
+                }
+            )
 
         # Simple synthesis: echo top passage and list sources
         if not retrieved:
@@ -145,19 +155,20 @@ async def process_query(request: QueryRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.post("/documents")
 async def add_document(doc: Document):
     """Add a document to the knowledge base and index it for retrieval."""
     try:
         ensure_model_loaded()
-        knowledge_base.append(doc.dict())
+        knowledge_base.append(doc.model_dump())
 
         emb = embedder.encode([doc.content], convert_to_numpy=True).astype("float32")
         emb = _normalize(emb)
 
         global next_vector_id
         index.add(emb)
-        id_to_doc[next_vector_id] = doc.dict()
+        id_to_doc[next_vector_id] = doc.model_dump()
         assigned_id = next_vector_id
         next_vector_id += 1
 
@@ -165,14 +176,17 @@ async def add_document(doc: Document):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @app.get("/documents")
 async def list_documents():
     """List all documents in the knowledge base"""
     return knowledge_base
 
+
 @app.get("/health")
 async def health():
     return {"status": "ok", "docs": len(knowledge_base), "indexed": index.ntotal}
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

@@ -1,4 +1,4 @@
-""
+"""
 Quick test script for NLWeb AutoRAG core functionality
 """
 import sys

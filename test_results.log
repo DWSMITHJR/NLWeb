@@ -1,0 +1,9 @@
+[22:54:21] [Warning] Running without administrator privileges (some tests may be skipped)
+[22:54:21] [Info]   Testing system environment...
+[22:54:21] [Error]   Environment validation failed: A parameter cannot be found that matches parameter name 'Name'.
+[22:54:21] [Debug]     at Test-Environment, C:\Users\donal\source\repos\NLWeb\test_system.ps1: line 189
+at <ScriptBlock>, C:\Users\donal\source\repos\NLWeb\test_system.ps1: line 522
+at <ScriptBlock>, <No file>: line 1
+[22:54:21] [Error] FATAL ERROR: Environment validation failed
+[22:54:21] [Error] at <ScriptBlock>, C:\Users\donal\source\repos\NLWeb\test_system.ps1: line 523
+at <ScriptBlock>, <No file>: line 1

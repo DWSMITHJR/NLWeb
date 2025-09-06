@@ -1,0 +1,65 @@
+{
+  "python_version": "3.13.5",
+  "os_info": "Windows 11 (10.0.26100)",
+  "working_dir": "C:\\Users\\donal\\source\\repos\\NLWeb\\backend",
+  "python_path": [
+    "C:\\Users\\donal\\source\\repos\\NLWeb",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\backend",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\backend",
+    "C:\\Users\\donal\\AppData\\Local\\Programs\\Python\\Python313\\python313.zip",
+    "C:\\Users\\donal\\AppData\\Local\\Programs\\Python\\Python313\\DLLs",
+    "C:\\Users\\donal\\AppData\\Local\\Programs\\Python\\Python313\\Lib",
+    "C:\\Users\\donal\\AppData\\Local\\Programs\\Python\\Python313",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\.venv",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\.venv\\Lib\\site-packages",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\.venv\\Lib\\site-packages\\win32",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\.venv\\Lib\\site-packages\\win32\\lib",
+    "C:\\Users\\donal\\source\\repos\\NLWeb\\.venv\\Lib\\site-packages\\Pythonwin"
+  ],
+  "core_dependencies": {
+    "numpy": {
+      "status": "\u2705",
+      "version": "2.3.2"
+    },
+    "pydantic": {
+      "status": "\u2705",
+      "version": "2.11.7"
+    },
+    "sentence_transformers": {
+      "status": "\u2705",
+      "version": "5.1.0"
+    },
+    "faiss": {
+      "status": "\u2705",
+      "version": "1.12.0"
+    },
+    "rank_bm25": {
+      "status": "\u2705",
+      "version": "version not found"
+    },
+    "pytest": {
+      "status": "\u2705",
+      "version": "8.4.2"
+    }
+  },
+  "project_imports": {
+    "models.Document": "\u2705",
+    "document_processor.DocumentProcessor": "\u274c attempted relative import with no known parent package",
+    "automl.retrievers.hybrid_retriever.HybridRetriever": "\u2705",
+    "automl.retrievers.bm25_retriever.BM25Retriever": "\u2705",
+    "automl.retrievers.faiss_retriever.FAISSRetriever": "\u2705"
+  },
+  "hybrid_retriever_test": {
+    "status": "\u2705",
+    "results": [
+      {
+        "id": "doc1",
+        "score": 1.0
+      },
+      {
+        "id": "doc2",
+        "score": 0.3221790544431451
+      }
+    ]
+  }
+}

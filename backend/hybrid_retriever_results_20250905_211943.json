@@ -1,0 +1,105 @@
+{
+  "test_queries": [
+    {
+      "query": "quick fox jumping",
+      "relevant_docs": [
+        "doc1",
+        "doc5"
+      ]
+    },
+    {
+      "query": "wizards jumping quickly",
+      "relevant_docs": [
+        "doc2"
+      ]
+    },
+    {
+      "query": "zebras jumping",
+      "relevant_docs": [
+        "doc4"
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "doc1",
+      "content": "The quick brown fox jumps over the lazy dog.",
+      "metadata": {
+        "source": "test"
+      }
+    },
+    {
+      "id": "doc2",
+      "content": "The five boxing wizards jump quickly.",
+      "metadata": {
+        "source": "test"
+      }
+    },
+    {
+      "id": "doc3",
+      "content": "Pack my box with five dozen liquor jugs.",
+      "metadata": {
+        "source": "test"
+      }
+    },
+    {
+      "id": "doc4",
+      "content": "How vexingly quick daft zebras jump!",
+      "metadata": {
+        "source": "test"
+      }
+    },
+    {
+      "id": "doc5",
+      "content": "The quick brown fox is a skilled jumper.",
+      "metadata": {
+        "source": "test"
+      }
+    }
+  ],
+  "results": {
+    "bm25": {
+      "precision": 0.8888888888888888,
+      "recall": 1.0,
+      "f1": 0.9333333333333332,
+      "mrr": 1.0
+    },
+    "faiss": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    },
+    "hybrid_90_10": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    },
+    "hybrid_70_30": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    },
+    "hybrid_50_50": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    },
+    "hybrid_30_70": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    },
+    "hybrid_10_90": {
+      "precision": 0.4444444444444444,
+      "recall": 1.0,
+      "f1": 0.6,
+      "mrr": 1.0
+    }
+  },
+  "timestamp": "20250905_211943"
+}

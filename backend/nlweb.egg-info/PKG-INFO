@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: nlweb
+Version: 0.1
+Requires-Dist: numpy
+Requires-Dist: sentence-transformers
+Requires-Dist: rank-bm25
+Requires-Dist: faiss-cpu
+Dynamic: requires-dist

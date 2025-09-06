@@ -1,0 +1,66 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250904225429
+Username: DWSLAPTOP32\donal
+RunAs User: DWSLAPTOP32\donal
+Configuration Name: 
+Machine: DWSLAPTOP32 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\run_with_logging.ps1
+Process ID: 148492
+PSVersion: 5.1.26100.4768
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4768
+BuildVersion: 10.0.26100.4768
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\donal\source\repos\NLWeb\test_log_20250904_225429.txt
+Starting test script with logging...
+Log file: C:\Users\donal\source\repos\NLWeb\test_log_20250904_225429.txt
+
+PowerShell Version:
+
+Name                           Value                                                        
+----                           -----                                                        
+PSVersion                      5.1.26100.4768                                               
+PSEdition                      Desktop                                                      
+PSCompatibleVersions           {1.0, 2.0, 3.0, 4.0...}                                      
+BuildVersion                   10.0.26100.4768                                              
+CLRVersion                     4.0.30319.42000                                              
+WSManStackVersion              3.0                                                          
+PSRemotingProtocolVersion      2.3                                                          
+SerializationVersion           1.1.0.1
+
+Current Directory Contents:
+
+
+    Directory: C:\Users\donal\source\repos\NLWeb
+
+
+Mode                 LastWriteTime         Length Name                                      
+----                 -------------         ------ ----                                      
+d--h--          9/3/2025   5:05 PM                .git                                      
+d-----          9/3/2025   3:12 PM                .snapshots                                
+d-----          9/3/2025   4:20 PM                .venv                                     
+d-----          9/4/2025   9:36 PM                backend                                   
+d-----          9/3/2025   3:32 PM                frontend                                  
+d-----          9/3/2025   4:21 PM                venv                                      
+-a----          9/4/2025  10:50 PM            403 debug_test.cmd                            
+-a----          9/3/2025   8:23 PM           6857 README.md                                 
+-a----          9/4/2025  10:50 PM            186 run_test.bat                              
+-a----          9/4/2025  10:54 PM           1461 run_with_logging.ps1                      
+-a----          9/3/2025   8:25 PM          10772 setup.ps1                                 
+-a----          9/4/2025  10:54 PM            762 test_log_20250904_225429.txt              
+-a----          9/4/2025  10:50 PM            216 test_pwsh.ps1                             
+-a----          9/4/2025  10:54 PM            678 test_results.log                          
+-a----          9/4/2025  10:52 PM          22122 test_system.ps1
+
+Running test_system.ps1...
+ERROR: The script 'test_system.ps1' cannot be run because it contained a "#requires" statement for Windows PowerShell 7.0. The version of Windows PowerShell that is required by the script does not match the currently running version of Windows PowerShell 5.1.26100.4768.
+at <ScriptBlock>, C:\Users\donal\source\repos\NLWeb\run_with_logging.ps1: line 22
+**********************
+Windows PowerShell transcript end
+End time: 20250904225429
+**********************
