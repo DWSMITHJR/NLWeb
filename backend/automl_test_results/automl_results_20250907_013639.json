@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-09-07T01:36:39.946835",
+  "results": [
+    {
+      "config": {
+        "chunk_size": 1024,
+        "chunk_overlap": 0,
+        "chunking_strategy": "sentence",
+        "top_k": 5,
+        "prompt_template": "step_by_step",
+        "retriever_type": "bm25",
+        "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+        "normalize_embeddings": true,
+        "bm25_weight": 0.3,
+        "faiss_weight": 0.7
+      },
+      "error": "'BM25Okapi' object has no attribute 'add_documents'",
+      "evaluation_time": 0.0002968311309814453,
+      "timestamp": "2025-09-07T01:36:39.945764"
+    },
+    {
+      "config": {
+        "chunk_size": 1024,
+        "chunk_overlap": 0,
+        "chunking_strategy": "sentence",
+        "top_k": 10,
+        "prompt_template": "simple",
+        "retriever_type": "bm25",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "normalize_embeddings": true,
+        "bm25_weight": 0.3,
+        "faiss_weight": 0.7
+      },
+      "error": "'BM25Okapi' object has no attribute 'add_documents'",
+      "evaluation_time": 0.00018978118896484375,
+      "timestamp": "2025-09-07T01:36:39.946128"
+    }
+  ],
+  "best_config": null,
+  "best_score": -Infinity
+}

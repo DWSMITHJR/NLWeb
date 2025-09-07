@@ -1,3 +1,0 @@
-@echo off
-echo Running test script with PowerShell 7...
-"%ProgramFiles%\PowerShell\7\pwsh.exe" -NoProfile -ExecutionPolicy Bypass -Command "& { .\test_system.ps1 -SkipFrontend; pause }"

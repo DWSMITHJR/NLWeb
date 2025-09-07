@@ -58,12 +58,25 @@ class BaseRetriever(ABC):
             A list of dictionaries, each containing the document, score, and
             retriever metadata.
         """
-        return [
-            {
-                "document": doc.model_dump(),
-                "score": float(score),
-                "retriever": self.name,
-                "config": self.config,
-            }
-            for doc, score in zip(documents, scores)
-        ]
+        results = []
+        for doc, score in zip(documents, scores):
+            try:
+                # Try both dict() and model_dump() for compatibility
+                if hasattr(doc, 'model_dump'):
+                    doc_dict = doc.model_dump()
+                else:
+                    doc_dict = doc.dict()
+                
+                results.append({
+                    "document": doc_dict,
+                    "score": float(score),
+                    "retriever": self.name,
+                    "config": self.config,
+                })
+            except Exception as e:
+                print(f"Error formatting document: {str(e)}")
+                print(f"Document type: {type(doc)}")
+                print(f"Document content: {doc}")
+                raise
+                
+        return results

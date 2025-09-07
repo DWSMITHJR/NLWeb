@@ -1,42 +1,76 @@
-Write-Host "Setting up Python environment..."
+# Setup and Test Script for NLWeb
 
-# Navigate to project root
-$projectRoot = "C:\Users\donal\source\repos\NLWeb"
-Set-Location $projectRoot
-
-# Remove existing virtual environment if it exists
-if (Test-Path .venv) {
-    Write-Host "Removing existing virtual environment..."
-    Remove-Item -Recurse -Force .venv
+# Function to check if a command exists
+function Command-Exists {
+    param($command)
+    $exists = $null -ne (Get-Command $command -ErrorAction SilentlyContinue)
+    return $exists
 }
 
-# Create new virtual environment
-Write-Host "Creating new virtual environment..."
-python -m venv .venv
+# Check Python installation
+if (-not (Command-Exists "python")) {
+    Write-Host "Python is not in your PATH. Please install Python 3.8 or higher and try again." -ForegroundColor Red
+    exit 1
+}
+
+# Check Python version
+$pythonVersion = (python --version 2>&1) -replace '^Python\s+', ''
+$version = [System.Version]::Parse($pythonVersion)
+
+if ($version.Major -lt 3 -or ($version.Major -eq 3 -and $version.Minor -lt 8)) {
+    Write-Host "Python 3.8 or higher is required. Found Python $pythonVersion" -ForegroundColor Red
+    exit 1
+}
+
+Write-Host "Using Python $pythonVersion" -ForegroundColor Green
+
+# Create virtual environment if it doesn't exist
+if (-not (Test-Path ".venv")) {
+    Write-Host "Creating virtual environment..." -ForegroundColor Cyan
+    python -m venv .venv
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "Failed to create virtual environment" -ForegroundColor Red
+        exit 1
+    }
+}
 
 # Activate virtual environment
-Write-Host "Activating virtual environment..."
-.venv\Scripts\Activate.ps1
+Write-Host "Activating virtual environment..." -ForegroundColor Cyan
+$activateScript = ".\.venv\Scripts\Activate.ps1"
+if (-not (Test-Path $activateScript)) {
+    Write-Host "Virtual environment activation script not found at $activateScript" -ForegroundColor Red
+    exit 1
+}
 
-# Upgrade pip and setuptools
-Write-Host "Upgrading pip and setuptools..."
-python -m pip install --upgrade pip setuptools
+# Source the activation script
+. $activateScript
+
+# Upgrade pip
+Write-Host "Upgrading pip..." -ForegroundColor Cyan
+python -m pip install --upgrade pip
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to upgrade pip" -ForegroundColor Yellow
+}
 
 # Install requirements
-Write-Host "Installing requirements..."
+Write-Host "Installing requirements..." -ForegroundColor Cyan
 pip install -r requirements.txt
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to install requirements" -ForegroundColor Red
+    exit 1
+}
 
 # Install in development mode
-Write-Host "Installing in development mode..."
+Write-Host "Installing in development mode..." -ForegroundColor Cyan
 pip install -e .
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "Failed to install in development mode" -ForegroundColor Yellow
+}
 
 # Run tests
-Write-Host "\nRunning tests..."
-cd backend
-python test_environment.py
+Write-Host "Running tests..." -ForegroundColor Cyan
+pytest -v
 
-# Run pytest
-Write-Host "\nRunning pytest..."
-python -m pytest -v
-
-Write-Host "\nSetup and testing complete!"
+# Keep the window open
+Write-Host "`nPress any key to exit..." -ForegroundColor Cyan
+$null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown')

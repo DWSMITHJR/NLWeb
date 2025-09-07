@@ -1,0 +1,67 @@
+**********************
+PowerShell transcript start
+Start time: 20250907141118
+Username: DWSLAPTOP32\donal
+RunAs User: DWSLAPTOP32\donal
+Configuration Name: 
+Machine: DWSLAPTOP32 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\donal\.windsurf\extensions\ms-vscode.powershell-2025.2.0-universal\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2025.2.0' -BundledModulesPath 'c:\Users\donal\.windsurf\extensions\ms-vscode.powershell-2025.2.0-universal\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2025.2.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Warning' -LogPath 'c:\Users\donal\AppData\Roaming\Windsurf\logs\20250906T195642\window1\exthost\ms-vscode.powershell' -SessionDetailsPath 'c:\Users\donal\AppData\Roaming\Windsurf\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-114004-643982.json' -FeatureFlags @() 
+Process ID: 154920
+PSVersion: 7.5.2
+PSEdition: Core
+GitCommitId: 7.5.2
+OS: Microsoft Windows 10.0.26100
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+=== NLWeb Backend: Environment Setup and Test Runner ===
+Log file: C:\Users\donal\source\repos\NLWeb\backend\logs\setup_run_20250907_141118.log
+\n[1] Detecting Python...
+Found python: C:\Users\donal\source\repos\NLWeb\.venv\Scripts\python.exe (Python 3.13.5)
+\n[2] Creating virtual environment (if missing)...
+Virtual environment already exists at C:\Users\donal\source\repos\NLWeb\backend\.venv
+\n[3] Activating venv...
+Venv Python: python.exe.Source
+\n[4] Upgrading pip/setuptools/wheel...
+
+\n[5] Installing requirements...
+
+PS>TerminatingError(): "Failed to install requirements."
+>> TerminatingError(): "Failed to install requirements."
+Failed to install requirements.
+Exception: C:\Users\donal\source\repos\NLWeb\backend\setup_and_run.ps1:70:32
+Line |
+  70 |  …  if ($LASTEXITCODE -ne 0) { throw "Failed to install requirements." }
+     |                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Failed to install requirements.
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cdonal\x5csource\x5crepos\x5cNLWeb\x5cbackendPS C:\Users\donal\source\repos\NLWeb\backend> ]633;B
+(.venv) $global:__psEditorServices_userInput = $args[0]
+(.venv) $global:__psEditorServices_userInput = ""
+(.venv) ./verify_system.bat
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cdonal\x5csource\x5crepos\x5cNLWeb\x5cbackendPS C:\Users\donal\source\repos\NLWeb\backend> ]633;B
+(.venv) $global:__psEditorServices_userInput = $args[0]
+(.venv) $global:__psEditorServices_userInput = ""
+(.venv) & c:/Users/donal/source/repos/NLWeb/.venv/Scripts/Activate.ps1
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cdonal\x5csource\x5crepos\x5cNLWeb\x5cbackendPS C:\Users\donal\source\repos\NLWeb\backend> ]633;B
+(.venv) $global:__psEditorServices_userInput = $args[0]
+(.venv) $global:__psEditorServices_userInput = ""
+(.venv) python -m pytest backend/test_automl_orchestrator.py -v
+  C:\Users\donal\source\repos\NLWeb\.venv\Lib\site-packages\_pytest\cacheprovider.py:475: PytestCacheWarning: co
+uld not create cache path C:\Users\donal\source\repos\NLWeb\backend\.pytest_cache\v\cache\nodeids: [WinError 5]
+Access is denied: 'C:\\Users\\donal\\source\\repos\\NLWeb\\backend\\.pytest_cache\\v\\cache'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================================= 1 warning in 0.00s ==============================================
+ERROR: file or directory not found: backend/test_automl_orchestrator.py
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cdonal\x5csource\x5crepos\x5cNLWeb\x5cbackendPS C:\Users\donal\source\repos\NLWeb\backend> ]633;B

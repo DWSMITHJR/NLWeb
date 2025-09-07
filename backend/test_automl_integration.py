@@ -115,7 +115,7 @@ def test_automl_integration():
             test_queries=test_queries,
             base_config=base_config,
             num_configs=3,  # Test with a small number of configurations
-            max_iterations=2,  # Limit iterations for testing
+            save_every=2,  # Save after every 2 configurations
         )
 
         # Save results

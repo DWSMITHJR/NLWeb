@@ -1,0 +1,43 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250907141013
+Username: DWSLAPTOP32\donal
+RunAs User: DWSLAPTOP32\donal
+Configuration Name: 
+Machine: DWSLAPTOP32 (Microsoft Windows NT 10.0.26100.0)
+Host Application: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -ExecutionPolicy Bypass -File .\setup_and_run.ps1
+Process ID: 91660
+PSVersion: 5.1.26100.4768
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.4768
+BuildVersion: 10.0.26100.4768
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+=== NLWeb Backend: Environment Setup and Test Runner ===
+Log file: C:\Users\donal\source\repos\NLWeb\backend\logs\setup_run_20250907_141012.log
+\n[1] Detecting Python...
+Found python: C:\Users\donal\source\repos\NLWeb\.venv\Scripts\python.exe (Python 3.13.5)
+\n[2] Creating virtual environment (if missing)...
+Virtual environment already exists at C:\Users\donal\source\repos\NLWeb\backend\.venv
+\n[3] Activating venv...
+Venv Python: python.exe.Source
+\n[4] Upgrading pip/setuptools/wheel...
+
+\n[5] Installing requirements...
+
+PS>TerminatingError(): "Failed to install requirements."
+Failed to install requirements.
+Failed to install requirements.
+At C:\Users\donal\source\repos\NLWeb\backend\setup_and_run.ps1:70 char:32
++ ...  if ($LASTEXITCODE -ne 0) { throw "Failed to install requirements." }
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Failed to install requirements.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Failed to install requirements.
+
+**********************
+Windows PowerShell transcript end
+End time: 20250907141103
+**********************

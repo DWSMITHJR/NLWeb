@@ -1,0 +1,41 @@
+{
+  "timestamp": "2025-09-07T00:45:38.859130",
+  "results": [
+    {
+      "config": {
+        "chunk_size": 256,
+        "chunk_overlap": 25,
+        "chunking_strategy": "sentence",
+        "top_k": 5,
+        "prompt_template": "context_first",
+        "retriever_type": "bm25",
+        "embedding_model": "sentence-transformers/multi-qa-mpnet-base-dot-v1",
+        "normalize_embeddings": true,
+        "bm25_weight": 0.5,
+        "faiss_weight": 0.3
+      },
+      "error": "'BM25Okapi' object has no attribute 'add_documents'",
+      "evaluation_time": 0.000301361083984375,
+      "timestamp": "2025-09-07T00:45:37.369649"
+    },
+    {
+      "config": {
+        "chunk_size": 128,
+        "chunk_overlap": 0,
+        "chunking_strategy": "sentence",
+        "top_k": 3,
+        "prompt_template": "simple",
+        "retriever_type": "hybrid",
+        "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "normalize_embeddings": true,
+        "bm25_weight": 0.37499999999999994,
+        "faiss_weight": 0.625
+      },
+      "error": "'BM25Okapi' object has no attribute 'add_documents'",
+      "evaluation_time": 1.4896044731140137,
+      "timestamp": "2025-09-07T00:45:38.858508"
+    }
+  ],
+  "best_config": null,
+  "best_score": -Infinity
+}

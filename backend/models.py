@@ -24,6 +24,14 @@ class Document(BaseModel):
     metadata: Dict[str, Any] = Field(
         default_factory=dict, description="Additional metadata about the document"
     )
+    
+    def model_dump(self, **kwargs):
+        """Convert the model to a dictionary."""
+        return {
+            "id": self.id,
+            "content": self.content,
+            "metadata": self.metadata
+        }
 
 
 class ChunkingStrategy(str, Enum):
@@ -59,10 +67,24 @@ class DocumentChunk(BaseModel):
     metadata: Dict[str, Any] = Field(
         default_factory=dict, description="Additional metadata about the chunk"
     )
-    chunk_index: int = Field(..., description="Index of this chunk in the document")
-    chunk_strategy: ChunkingStrategy = Field(
-        default=ChunkingStrategy.FIXED, description="Strategy used to create this chunk"
+    chunk_index: int = Field(
+        default=0, description="Index of this chunk within the parent document"
     )
+    chunk_strategy: ChunkingStrategy = Field(
+        default=ChunkingStrategy.FIXED,
+        description="Strategy used to create this chunk",
+    )
+    
+    def model_dump(self, **kwargs):
+        """Convert the model to a dictionary."""
+        return {
+            "id": self.id,
+            "document_id": self.document_id,
+            "content": self.content,
+            "metadata": self.metadata,
+            "chunk_index": self.chunk_index,
+            "chunk_strategy": self.chunk_strategy.value
+        }
 
 
 class DocumentProcessorConfig(BaseModel):
