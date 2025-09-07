@@ -1,5 +1,8 @@
 # NLWeb AutoRAG
 
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-brightgreen)](https://github.com/DWSMITHJR/NLWeb)
+
+
 A Windows-based Natural Language Web Application with AutoML-powered Retrieval-Augmented Generation (RAG) capabilities, featuring hybrid retrieval and prompt template optimization.
 
 ## Features
